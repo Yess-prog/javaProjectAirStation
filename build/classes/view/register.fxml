@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RegisterController" prefWidth="300" prefHeight="300">
+    <VBox spacing="10" alignment="CENTER" layoutX="30" layoutY="30">
+        <Label text="Inscription Agent" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+        <TextField fx:id="usernameField" promptText="Nom d'utilisateur" />
+        <TextField fx:id="nomField" promptText="Nom" />
+        <TextField fx:id="prenomField" promptText="Prénom" />
+        <TextField fx:id="emailField" promptText="Email" />
+        <TextField fx:id="telephoneField" promptText="Téléphone" />
+        <PasswordField fx:id="passwordField" promptText="Mot de passe" />
+        <Button text="S'inscrire" onAction="#handleRegister" />
+        <Hyperlink text="Déjà inscrit ? Cliquez ici pour vous connecter" onAction="#goToLoginPage"/>
+        <Label fx:id="messageLabel" textFill="red" />
+    </VBox>
+</AnchorPane>

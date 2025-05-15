@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane  stylesheets="@../view/style.css" fx:controller="controller.AvionsController" xmlns:fx="http://javafx.com/fxml/1" prefWidth="800" prefHeight="600" style="-fx-background-color: #ecf0f1;">
+    
+    <!-- Navigation Bar -->
+    <HBox spacing="30" alignment="CENTER_LEFT" style="-fx-background-color: #34495e; -fx-padding: 15 30;" 
+          AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <Button text="Pilotes" styleClass="nav-button" onAction="#goToPilotesPage"/>
+        <Button text="Vols" styleClass="nav-button" onAction="#goToVolsPage"/>
+        <Button text="Avions" styleClass="nav-button" onAction="#goToAvionsPage"/>
+        <Button text="Équipages" styleClass="nav-button" onAction="#goToEquipePage"/>
+    </HBox>
+
+    <!-- Main Content -->
+    <VBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20;" 
+          AnchorPane.topAnchor="70" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        
+        <Label text="Gestion des Avions" style="-fx-font-size: 24px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+
+        <!-- Form -->
+        <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #ffffff; -fx-padding: 15; -fx-border-color: #bdc3c7; -fx-border-radius: 8; -fx-background-radius: 8;">
+            <TextField fx:id="codeAvionField" prefWidth="100" promptText="Code avion"/>
+            <TextField fx:id="modeleField" prefWidth="120" promptText="Modèle"/>
+            <TextField fx:id="capaciteField" prefWidth="80" promptText="Capacité"/>
+            <ComboBox fx:id="typeVolBox" prefWidth="140" promptText="Type de vol"/>
+            <ComboBox fx:id="etatBox" prefWidth="120" promptText="État"/>
+            <Button text="Ajouter" styleClass="action-button" onAction="#ajouterAvion"/>
+            <Button text="Modifier" styleClass="action-button" onAction="#modifierAvion"/>
+            <Button text="Supprimer" styleClass="delete-button" onAction="#supprimerAvion"/>
+        </HBox>
+
+        <!-- Table -->
+        <TableView fx:id="tableAvions" prefHeight="400" prefWidth="760" style="-fx-background-radius: 8; -fx-border-radius: 8;">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="50" text="ID"/>
+                <TableColumn fx:id="colCodeAvion" prefWidth="120" text="Code avion"/>
+                <TableColumn fx:id="colModele" prefWidth="150" text="Modèle"/>
+                <TableColumn fx:id="colCapacite" prefWidth="80" text="Capacité"/>
+                <TableColumn fx:id="colTypeVol" prefWidth="120" text="Type de vol"/>
+                <TableColumn fx:id="colEtat" prefWidth="100" text="État"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Styles -->
+   
+</AnchorPane>

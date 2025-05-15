@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.PilotesController">
+
+    <!-- Dashboard (top bar) -->
+    <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: #2c3e50; -fx-padding: 10 20;"
+          AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <Button text="Pilotes" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToPilotesPage" />
+        <Button text="Vols" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToVolsPage" />
+        <Button text="Avions" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToAvionsPage" />
+        <Button text="Équipages" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToEquipePage" />
+    </HBox>
+
+    <!-- Main content below the dashboard -->
+    <VBox spacing="15" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+        <Label text="Gestion des Pilotes" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Nom :" />
+            <TextField fx:id="nomField" promptText="Nom complet" HBox.hgrow="ALWAYS"/>
+            <Label text="Licence :" />
+            <TextField fx:id="licenceField" promptText="Numéro de licence" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Ajouter" onAction="#ajouterPilote" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+            <Button text="Modifier" onAction="#modifierPilote" style="-fx-background-color: #2196F3; -fx-text-fill: white;" />
+            <Button text="Archiver" onAction="#archiverPilote" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+        </HBox>
+
+        <TableView fx:id="tablePilotes" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colNom" text="Nom" prefWidth="150" />
+                <TableColumn fx:id="colLicence" text="Licence" prefWidth="200" />
+                <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="100" />
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

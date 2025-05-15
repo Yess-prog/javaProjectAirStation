@@ -1,0 +1,33 @@
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: #1abc9c;
+}
+
+.action-button {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12;
+}
+
+.action-button:hover {
+    -fx-background-color: #3498db;
+}
+
+.delete-button {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12;
+}
+
+.delete-button:hover {
+    -fx-background-color: #e74c3c;
+}

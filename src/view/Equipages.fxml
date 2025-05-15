@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.EquipagesController">
+    <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: #2c3e50; -fx-padding: 10 20;"
+          AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <Button text="Pilotes" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToPilotesPage" />
+        <Button text="Vols" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToVolsPage" />
+        <Button text="Avions" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToAvionsPage" />
+        <Button text="Équipages" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToEquipePage" />
+    </HBox>
+
+    <VBox spacing="10" alignment="CENTER"  AnchorPane.topAnchor="50"  AnchorPane.leftAnchor="10"
+      AnchorPane.rightAnchor="10"
+      AnchorPane.bottomAnchor="10">
+        <Label text="Gestion des Équipages" />
+        <HBox spacing="10">
+            <TextField fx:id="nomField" promptText="Nom" />
+            <ComboBox fx:id="fonctionBox" promptText="Fonction">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Hôtesse" />
+                        <String fx:value="Steward" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Button text="Ajouter" onAction="#ajouterEquipage" />
+            <Button text="Modifier"  />
+            <Button text="Archiver" />
+        </HBox>
+        <TableView fx:id="tableEquipages">
+            <columns>
+                <TableColumn fx:id="colNom" text="Nom" />
+                <TableColumn fx:id="colFonction" text="Fonction" />
+                <TableColumn fx:id="colDisponible" text="Disponible" />
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

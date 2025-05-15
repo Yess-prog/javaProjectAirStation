@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.LoginController" prefWidth="400" prefHeight="350">
+    <VBox alignment="CENTER" spacing="15" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <VBox spacing="10" alignment="CENTER" style="-fx-padding: 30 40 30 40;">
+            <Label text="Connexion Agent" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+            <TextField fx:id="usernameField" promptText="Nom d'utilisateur" prefWidth="250" />
+            <PasswordField fx:id="passwordField" promptText="Mot de passe" prefWidth="250" />
+            <Button text="Se connecter" onAction="#handleLogin"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;" 
+                    prefWidth="150" />
+            <Hyperlink text="Pas encore inscrit ? Cliquez ici pour vous inscrire" onAction="#goToRegisterPage"
+                       style="-fx-text-fill: #3F51B5;" />
+            <Label fx:id="messageLabel" textFill="red" style="-fx-font-style: italic;" />
+        </VBox>
+    </VBox>
+</AnchorPane>
