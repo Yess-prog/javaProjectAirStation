@@ -108,4 +108,9 @@ v.setPilote2(p2);
         System.err.println("Erreur lors de la suppression du vol : " + e.getMessage());
     }
     }
+    public Vol getVolByNumero(int nv){
+        List<Vol> v = new ArrayList();
+        v=this.getAllVols();
+        return v.get(nv);
+    }
 }

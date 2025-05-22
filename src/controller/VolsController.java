@@ -134,13 +134,16 @@ Pilote pilote1 = piloteDAO.getPiloteByNom(nomPilote1);
         
 
         
-            if ((volExistant.getPilote1().getId() == pilote1.getId()) ||
-                (volExistant.getPilote2().getId() == pilote1.getId()) ||
-                (volExistant.getPilote1().getId() == pilote2.getId()) ||
-                (volExistant.getPilote2().getId() == pilote2.getId())) {
-                System.err.println("Un des pilotes est déjà affecté à un autre vol pendant cette période.");
-                allocate=false;
-            }
+            boolean chevauche = dd.isBefore(arriveeExistante) && da.isAfter(departExistant);
+if (chevauche && (
+    volExistant.getPilote1().getId() == pilote1.getId() ||
+    volExistant.getPilote2().getId() == pilote1.getId() ||
+    volExistant.getPilote1().getId() == pilote2.getId() ||
+    volExistant.getPilote2().getId() == pilote2.getId())) {
+    System.err.println("Un des pilotes est déjà affecté à un autre vol pendant cette période.");
+    allocate = false;
+}
+
         
         
             if(allocate){
