@@ -5,15 +5,15 @@
 <?import javafx.geometry.Pos?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.PilotesController">
+<AnchorPane stylesheets="@../view/style.css" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.PilotesController">
 
     <!-- Dashboard (top bar) -->
-    <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: #2c3e50; -fx-padding: 10 20;"
+    <HBox spacing="30" alignment="CENTER_LEFT" style="-fx-background-color: #34495e; -fx-padding: 15 30;" 
           AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-        <Button text="Pilotes" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToPilotesPage" />
-        <Button text="Vols" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToVolsPage" />
-        <Button text="Avions" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToAvionsPage" />
-        <Button text="Équipages" style="-fx-text-fill: white; -fx-background-color: transparent;" onAction="#goToEquipePage" />
+        <Button text="Pilotes" styleClass="nav-button" onAction="#goToPilotesPage"/>
+        <Button text="Vols" styleClass="nav-button" onAction="#goToVolsPage"/>
+        <Button text="Avions" styleClass="nav-button" onAction="#goToAvionsPage"/>
+        <Button text="Équipages" styleClass="nav-button" onAction="#goToEquipePage"/>
     </HBox>
 
     <!-- Main content below the dashboard -->
@@ -38,6 +38,7 @@
                 <TableColumn fx:id="colNom" text="Nom" prefWidth="150" />
                 <TableColumn fx:id="colLicence" text="Licence" prefWidth="200" />
                 <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="100" />
+                
             </columns>
         </TableView>
     </VBox>

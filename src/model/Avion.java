@@ -84,4 +84,9 @@ public class Avion {
     public StringProperty etatProperty() {
         return etat;
     }
+    @Override
+public String toString() {
+    return this.codeAvion.toString();  // or whatever string you want displayed
+}
+
 }

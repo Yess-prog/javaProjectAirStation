@@ -1,5 +1,6 @@
 package model;
 
+import dao.equipageDAO;
 import java.time.LocalDateTime;
 
 public class Vol {
@@ -9,7 +10,11 @@ public class Vol {
     private String destination;
     private LocalDateTime date_depart;
     private LocalDateTime date_arrivee;
-    private int avion_id;
+    private Pilote pilote1;
+    private Pilote pilote2;
+    private Equipage equipage;
+    
+    private String avion_id;
 
     public int getId() {
         return id;
@@ -59,13 +64,37 @@ public class Vol {
         this.date_arrivee = date_arrivee;
     }
 
-    public int getAvion_id() {
+    public String getAvion_id() {
         return avion_id;
     }
 
-    public void setAvion_id(int avion_id) {
+    public void setAvion_id(String avion_id) {
         this.avion_id = avion_id;
     }
+    public Pilote getPilote1() {
+    return this.pilote1;
+}
+
+public void setPilote1(Pilote pilote1) {
+    this.pilote1 = pilote1;
+}
+
+public Pilote getPilote2() {
+    return this.pilote2;
+}
+
+public void setPilote2(Pilote pilote2) {
+    this.pilote2 = pilote2;
+}
+public void setEquipage(int eq) {
+        equipageDAO equipageDAO = new equipageDAO();
+    this.equipage = equipageDAO.getEquipageById(eq);
+}
+public Equipage getEquipage() {
+        
+    return this.equipage;
+}
+
 
 
    
